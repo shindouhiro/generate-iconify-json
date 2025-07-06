@@ -1,0 +1,37 @@
+<svg width="266" height="176" viewBox="0 0 266 176" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_14999_11079)">
+<rect x="8" y="8" width="250" height="160" rx="8" fill="#F6F5F7"/>
+<path d="M8 16C8 11.5817 11.5817 8 16 8H250C254.418 8 258 11.5817 258 16V28H8V16Z" fill="#E1D6FB"/>
+<rect x="38" y="38" width="213" height="28" rx="2" fill="white"/>
+<rect x="24" y="139" width="219" height="16" rx="2" fill="white"/>
+<rect x="42" y="42" width="205" height="8" rx="2" fill="#E7E6E8"/>
+<rect x="42" y="54" width="159" height="8" rx="2" fill="#E7E6E8"/>
+<circle cx="24" cy="48" r="8" fill="url(#paint0_linear_14999_11079)"/>
+<circle cx="20.5" cy="18.5" r="4.5" fill="#A484F3"/>
+<circle cx="33.5" cy="18.5" r="4.5" fill="#A484F3"/>
+<circle cx="46.5" cy="18.5" r="4.5" fill="#A484F3"/>
+<path d="M229.629 143.522C229.629 143.522 230.438 143.207 230.371 143.973C230.349 144.289 230.146 145.394 229.989 146.588L229.449 150.128C229.449 150.128 229.404 150.647 228.999 150.737C228.595 150.827 227.988 150.421 227.875 150.331C227.785 150.263 226.189 149.249 225.627 148.753C225.469 148.617 225.29 148.347 225.649 148.031L228.01 145.777C228.28 145.506 228.55 144.875 227.426 145.642L224.278 147.783C224.278 147.783 223.918 148.009 223.243 147.806L221.782 147.355C221.782 147.355 221.242 147.017 222.164 146.679C224.413 145.619 227.178 144.537 229.629 143.522Z" fill="url(#paint1_linear_14999_11079)" fill-opacity="0.5"/>
+<path d="M24 47C24.9665 47 25.75 46.2165 25.75 45.25C25.75 44.2835 24.9665 43.5 24 43.5C23.0335 43.5 22.25 44.2835 22.25 45.25C22.25 46.2165 23.0335 47 24 47Z" fill="white" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19.5 52.2V52.5H28.5V52.2C28.5 51.0799 28.5 50.5198 28.282 50.092C28.0903 49.7157 27.7843 49.4097 27.408 49.218C26.9802 49 26.4201 49 25.3 49H22.7C21.5799 49 21.0199 49 20.592 49.218C20.2157 49.4097 19.9097 49.7157 19.718 50.092C19.5 50.5198 19.5 51.0799 19.5 52.2Z" fill="white" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<filter id="filter0_d_14999_11079" x="0" y="0" width="266" height="176" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="4"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_14999_11079"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_14999_11079" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_14999_11079" x1="24" y1="40" x2="24" y2="56" gradientUnits="userSpaceOnUse">
+<stop stop-color="#4D15D8"/>
+<stop offset="1" stop-color="#FF9DA0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_14999_11079" x1="226" y1="143.458" x2="226" y2="150.75" gradientUnits="userSpaceOnUse">
+<stop stop-color="#4D15D8"/>
+<stop offset="1" stop-color="#FF9DA0"/>
+</linearGradient>
+</defs>
+</svg>

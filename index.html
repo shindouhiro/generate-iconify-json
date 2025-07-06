@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icons Test Page</title>
+  <link rel="stylesheet" href="./iconify-icons.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    
+    .icon-item {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    
+    .icon-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    .iconify {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #666;
+    }
+    
+    .icon-name {
+      font-size: 12px;
+      color: #888;
+      margin-top: 5px;
+      word-break: break-all;
+    }
+    
+    .chinese-name {
+      font-size: 14px;
+      color: #333;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>图标测试页面 - Icon Test Page</h1>
+    <div class="icon-grid">
+      <!-- 上传 - upload -->
+      <div class="icon-item">
+        <span class="iconify iconify-upload"></span>
+        <div class="chinese-name">上传</div>
+        <div class="icon-name">upload</div>
+      </div>
+      
+      <!-- 停止 - stop -->
+      <div class="icon-item">
+        <span class="iconify iconify-stop"></span>
+        <div class="chinese-name">停止</div>
+        <div class="icon-name">stop</div>
+      </div>
+      
+      <!-- 全凭模式-插图 - full-screen-mode-illustration -->
+      <div class="icon-item">
+        <span class="iconify iconify-full-screen-mode-illustration"></span>
+        <div class="chinese-name">全凭模式-插图</div>
+        <div class="icon-name">full-screen-mode-illustration</div>
+      </div>
+      
+      <!-- 全局放大 - global-zoom -->
+      <div class="icon-item">
+        <span class="iconify iconify-global-zoom"></span>
+        <div class="chinese-name">全局放大</div>
+        <div class="icon-name">global-zoom</div>
+      </div>
+      
+      <!-- 切换 - switch -->
+      <div class="icon-item">
+        <span class="iconify iconify-switch"></span>
+        <div class="chinese-name">切换</div>
+        <div class="icon-name">switch</div>
+      </div>
+      
+      <!-- 删除 - delete -->
+      <div class="icon-item">
+        <span class="iconify iconify-delete"></span>
+        <div class="chinese-name">删除</div>
+        <div class="icon-name">delete</div>
+      </div>
+      
+      <!-- 刷新 - refresh -->
+      <div class="icon-item">
+        <span class="iconify iconify-refresh"></span>
+        <div class="chinese-name">刷新</div>
+        <div class="icon-name">refresh</div>
+      </div>
+      
+      <!-- 加 - plus -->
+      <div class="icon-item">
+        <span class="iconify iconify-plus"></span>
+        <div class="chinese-name">加</div>
+        <div class="icon-name">plus</div>
+      </div>
+      
+      <!-- 历史对话 - history-chat -->
+      <div class="icon-item">
+        <span class="iconify iconify-history-chat"></span>
+        <div class="chinese-name">历史对话</div>
+        <div class="icon-name">history-chat</div>
+      </div>
+      
+      <!-- 历史记录 - history-record -->
+      <div class="icon-item">
+        <span class="iconify iconify-history-record"></span>
+        <div class="chinese-name">历史记录</div>
+        <div class="icon-name">history-record</div>
+      </div>
+      
+      <!-- 叉 - cross -->
+      <div class="icon-item">
+        <span class="iconify iconify-cross"></span>
+        <div class="chinese-name">叉</div>
+        <div class="icon-name">cross</div>
+      </div>
+      
+      <!-- 反馈-成功 - feedback-success -->
+      <div class="icon-item">
+        <span class="iconify iconify-feedback-success"></span>
+        <div class="chinese-name">反馈-成功</div>
+        <div class="icon-name">feedback-success</div>
+      </div>
+      
+      <!-- 反馈-通知 - feedback-notification -->
+      <div class="icon-item">
+        <span class="iconify iconify-feedback-notification"></span>
+        <div class="chinese-name">反馈-通知</div>
+        <div class="icon-name">feedback-notification</div>
+      </div>
+      
+      <!-- 圆球 - circle -->
+      <div class="icon-item">
+        <span class="iconify iconify-circle"></span>
+        <div class="chinese-name">圆球</div>
+        <div class="icon-name">circle</div>
+      </div>
+      
+      <!-- 复制 - copy -->
+      <div class="icon-item">
+        <span class="iconify iconify-copy"></span>
+        <div class="chinese-name">复制</div>
+        <div class="icon-name">copy</div>
+      </div>
+      
+      <!-- 多选-已选 - multi-select-selected -->
+      <div class="icon-item">
+        <span class="iconify iconify-multi-select-selected"></span>
+        <div class="chinese-name">多选-已选</div>
+        <div class="icon-name">multi-select-selected</div>
+      </div>
+      
+      <!-- 多选-未选 - multi-select-unselected -->
+      <div class="icon-item">
+        <span class="iconify iconify-multi-select-unselected"></span>
+        <div class="chinese-name">多选-未选</div>
+        <div class="icon-name">multi-select-unselected</div>
+      </div>
+      
+      <!-- 导航-统一头像 - navigation-unified-avatar -->
+      <div class="icon-item">
+        <span class="iconify iconify-navigation-unified-avatar"></span>
+        <div class="chinese-name">导航-统一头像</div>
+        <div class="icon-name">navigation-unified-avatar</div>
+      </div>
+      
+      <!-- 小箭头 - small-arrow -->
+      <div class="icon-item">
+        <span class="iconify iconify-small-arrow"></span>
+        <div class="chinese-name">小箭头</div>
+        <div class="icon-name">small-arrow</div>
+      </div>
+      
+      <!-- 应用-已选 - application-selected -->
+      <div class="icon-item">
+        <span class="iconify iconify-application-selected"></span>
+        <div class="chinese-name">应用-已选</div>
+        <div class="icon-name">application-selected</div>
+      </div>
+      
+      <!-- 应用-默认 - application-default -->
+      <div class="icon-item">
+        <span class="iconify iconify-application-default"></span>
+        <div class="chinese-name">应用-默认</div>
+        <div class="icon-name">application-default</div>
+      </div>
+      
+      <!-- 应用商店-已选 - app-store-selected -->
+      <div class="icon-item">
+        <span class="iconify iconify-app-store-selected"></span>
+        <div class="chinese-name">应用商店-已选</div>
+        <div class="icon-name">app-store-selected</div>
+      </div>
+      
+      <!-- 应用商店-默认 - app-store-default -->
+      <div class="icon-item">
+        <span class="iconify iconify-app-store-default"></span>
+        <div class="chinese-name">应用商店-默认</div>
+        <div class="icon-name">app-store-default</div>
+      </div>
+      
+      <!-- 开关-关 - switch-off -->
+      <div class="icon-item">
+        <span class="iconify iconify-switch-off"></span>
+        <div class="chinese-name">开关-关</div>
+        <div class="icon-name">switch-off</div>
+      </div>
+      
+      <!-- 开关-开 - switch-on -->
+      <div class="icon-item">
+        <span class="iconify iconify-switch-on"></span>
+        <div class="chinese-name">开关-开</div>
+        <div class="icon-name">switch-on</div>
+      </div>
+      
+      <!-- 开启新对话 - start-new-chat -->
+      <div class="icon-item">
+        <span class="iconify iconify-start-new-chat"></span>
+        <div class="chinese-name">开启新对话</div>
+        <div class="icon-name">start-new-chat</div>
+      </div>
+      
+      <!-- 拖拽 - drag -->
+      <div class="icon-item">
+        <span class="iconify iconify-drag"></span>
+        <div class="chinese-name">拖拽</div>
+        <div class="icon-name">drag</div>
+      </div>
+      
+      <!-- 插件-已选 - plugin-selected -->
+      <div class="icon-item">
+        <span class="iconify iconify-plugin-selected"></span>
+        <div class="chinese-name">插件-已选</div>
+        <div class="icon-name">plugin-selected</div>
+      </div>
+      
+      <!-- 插件-默认 - plugin-default -->
+      <div class="icon-item">
+        <span class="iconify iconify-plugin-default"></span>
+        <div class="chinese-name">插件-默认</div>
+        <div class="icon-name">plugin-default</div>
+      </div>
+      
+      <!-- 插件中心-创建人头像 - plugin-center-creator-avatar -->
+      <div class="icon-item">
+        <span class="iconify iconify-plugin-center-creator-avatar"></span>
+        <div class="chinese-name">插件中心-创建人头像</div>
+        <div class="icon-name">plugin-center-creator-avatar</div>
+      </div>
+      
+      <!-- 插件中心-已选 - plugin-center-selected -->
+      <div class="icon-item">
+        <span class="iconify iconify-plugin-center-selected"></span>
+        <div class="chinese-name">插件中心-已选</div>
+        <div class="icon-name">plugin-center-selected</div>
+      </div>
+      
+      <!-- 插件中心-默认 - plugin-center-default -->
+      <div class="icon-item">
+        <span class="iconify iconify-plugin-center-default"></span>
+        <div class="chinese-name">插件中心-默认</div>
+        <div class="icon-name">plugin-center-default</div>
+      </div>
+      
+      <!-- 搜索 - search -->
+      <div class="icon-item">
+        <span class="iconify iconify-search"></span>
+        <div class="chinese-name">搜索</div>
+        <div class="icon-name">search</div>
+      </div>
+      
+      <!-- 数据库-已选 - database-selected -->
+      <div class="icon-item">
+        <span class="iconify iconify-database-selected"></span>
+        <div class="chinese-name">数据库-已选</div>
+        <div class="icon-name">database-selected</div>
+      </div>
+      
+      <!-- 数据库-默认 - database-default -->
+      <div class="icon-item">
+        <span class="iconify iconify-database-default"></span>
+        <div class="chinese-name">数据库-默认</div>
+        <div class="icon-name">database-default</div>
+      </div>
+      
+      <!-- 智能卡片-默认 - smart-card-default -->
+      <div class="icon-item">
+        <span class="iconify iconify-smart-card-default"></span>
+        <div class="chinese-name">智能卡片-默认</div>
+        <div class="icon-name">smart-card-default</div>
+      </div>
+      
+      <!-- 智能卡片 - smart-card -->
+      <div class="icon-item">
+        <span class="iconify iconify-smart-card"></span>
+        <div class="chinese-name">智能卡片</div>
+        <div class="icon-name">smart-card</div>
+      </div>
+      
+      <!-- 智能工作流 - smart-workflow -->
+      <div class="icon-item">
+        <span class="iconify iconify-smart-workflow"></span>
+        <div class="chinese-name">智能工作流</div>
+        <div class="icon-name">smart-workflow</div>
+      </div>
+      
+      <!-- 更多- hover - more-hover -->
+      <div class="icon-item">
+        <span class="iconify iconify-more-hover"></span>
+        <div class="chinese-name">更多- hover</div>
+        <div class="icon-name">more-hover</div>
+      </div>
+      
+      <!-- 更多-默认 - more-default -->
+      <div class="icon-item">
+        <span class="iconify iconify-more-default"></span>
+        <div class="chinese-name">更多-默认</div>
+        <div class="icon-name">more-default</div>
+      </div>
+      
+      <!-- 模型管理-已选 - model-management-selected -->
+      <div class="icon-item">
+        <span class="iconify iconify-model-management-selected"></span>
+        <div class="chinese-name">模型管理-已选</div>
+        <div class="icon-name">model-management-selected</div>
+      </div>
+      
+      <!-- 模型管理-选中 - model-management-active -->
+      <div class="icon-item">
+        <span class="iconify iconify-model-management-active"></span>
+        <div class="chinese-name">模型管理-选中</div>
+        <div class="icon-name">model-management-active</div>
+      </div>
+      
+      <!-- 模型管理-默认 - model-management-default -->
+      <div class="icon-item">
+        <span class="iconify iconify-model-management-default"></span>
+        <div class="chinese-name">模型管理-默认</div>
+        <div class="icon-name">model-management-default</div>
+      </div>
+      
+      <!-- 注意 - attention -->
+      <div class="icon-item">
+        <span class="iconify iconify-attention"></span>
+        <div class="chinese-name">注意</div>
+        <div class="icon-name">attention</div>
+      </div>
+      
+      <!-- 浮窗模式插图 - floating-mode-illustration -->
+      <div class="icon-item">
+        <span class="iconify iconify-floating-mode-illustration"></span>
+        <div class="chinese-name">浮窗模式插图</div>
+        <div class="icon-name">floating-mode-illustration</div>
+      </div>
+      
+      <!-- 添加 - add -->
+      <div class="icon-item">
+        <span class="iconify iconify-add"></span>
+        <div class="chinese-name">添加</div>
+        <div class="icon-name">add</div>
+      </div>
+      
+      <!-- 用户-默认 - user-default -->
+      <div class="icon-item">
+        <span class="iconify iconify-user-default"></span>
+        <div class="chinese-name">用户-默认</div>
+        <div class="icon-name">user-default</div>
+      </div>
+      
+      <!-- 用户管理-已选 - user-management-selected -->
+      <div class="icon-item">
+        <span class="iconify iconify-user-management-selected"></span>
+        <div class="chinese-name">用户管理-已选</div>
+        <div class="icon-name">user-management-selected</div>
+      </div>
+      
+      <!-- 知识库-已选 - knowledge-base-selected -->
+      <div class="icon-item">
+        <span class="iconify iconify-knowledge-base-selected"></span>
+        <div class="chinese-name">知识库-已选</div>
+        <div class="icon-name">knowledge-base-selected</div>
+      </div>
+      
+      <!-- 知识库-默认 - knowledge-base-default -->
+      <div class="icon-item">
+        <span class="iconify iconify-knowledge-base-default"></span>
+        <div class="chinese-name">知识库-默认</div>
+        <div class="icon-name">knowledge-base-default</div>
+      </div>
+      
+      <!-- 箭头下 - arrow-down -->
+      <div class="icon-item">
+        <span class="iconify iconify-arrow-down"></span>
+        <div class="chinese-name">箭头下</div>
+        <div class="icon-name">arrow-down</div>
+      </div>
+      
+      <!-- 箭头左 - arrow-left -->
+      <div class="icon-item">
+        <span class="iconify iconify-arrow-left"></span>
+        <div class="chinese-name">箭头左</div>
+        <div class="icon-name">arrow-left</div>
+      </div>
+      
+      <!-- 编辑 - edit -->
+      <div class="icon-item">
+        <span class="iconify iconify-edit"></span>
+        <div class="chinese-name">编辑</div>
+        <div class="icon-name">edit</div>
+      </div>
+      
+      <!-- 设置 - settings -->
+      <div class="icon-item">
+        <span class="iconify iconify-settings"></span>
+        <div class="chinese-name">设置</div>
+        <div class="icon-name">settings</div>
+      </div>
+      
+      <!-- 调试 - debug -->
+      <div class="icon-item">
+        <span class="iconify iconify-debug"></span>
+        <div class="chinese-name">调试</div>
+        <div class="icon-name">debug</div>
+      </div>
+      
+      <!-- 轮询工作流 - polling-workflow -->
+      <div class="icon-item">
+        <span class="iconify iconify-polling-workflow"></span>
+        <div class="chinese-name">轮询工作流</div>
+        <div class="icon-name">polling-workflow</div>
+      </div>
+      
+      <!-- 选择框-箭头下 - select-box-arrow-down -->
+      <div class="icon-item">
+        <span class="iconify iconify-select-box-arrow-down"></span>
+        <div class="chinese-name">选择框-箭头下</div>
+        <div class="icon-name">select-box-arrow-down</div>
+      </div>
+      
+      <!-- 顺序工作流 - sequential-workflow -->
+      <div class="icon-item">
+        <span class="iconify iconify-sequential-workflow"></span>
+        <div class="chinese-name">顺序工作流</div>
+        <div class="icon-name">sequential-workflow</div>
+      </div>
+      
+      <!-- 首页-已选 - home-selected -->
+      <div class="icon-item">
+        <span class="iconify iconify-home-selected" ></span>
+        <div class="chinese-name">首页-已选</div>
+        <div class="icon-name" style="color: red;">home-selected</div>
+      </div>
+      
+      <!-- 魔法棒 - magic-wand -->
+      <div class="icon-item">
+        <span class="iconify iconify-magic-wand"></span>
+        <div class="chinese-name">魔法棒</div>
+        <div class="icon-name">magic-wand</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
