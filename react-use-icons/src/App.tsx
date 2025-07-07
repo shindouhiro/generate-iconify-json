@@ -1,187 +1,71 @@
-import React, { useState } from 'react'
-import MyIcon, { type IconName } from './components/MyIcon'
-import './App.css'
+import React, { useState, useRef } from 'react'
+import MyIcon from './components/MyIcon'
+import myIcons from '../../my-icons.json'
 
 function App() {
-  const [selectedIcon, setSelectedIcon] = useState<IconName>('add')
-  const [iconSize, setIconSize] = useState(32)
+  const allIconNames = Object.keys(myIcons.icons)
+  const [copied, setCopied] = useState<string | null>(null)
+  const [search, setSearch] = useState('')
+  const codeRefs = useRef<Record<string, HTMLDivElement | null>>({})
 
-  // 自定义图标列表
-  const customIcons: IconName[] = [
-    'add', 'search', 'settings', 'edit', 'delete', 'copy', 
-    'home-selected', 'magic-wand'
-  ]
+  const handleCopy = (iconName: string) => {
+    const code = codeRefs.current[iconName]?.innerText || ''
+    if (code) {
+      navigator.clipboard.writeText(code)
+      setCopied(iconName)
+      setTimeout(() => setCopied(null), 1200)
+    }
+  }
 
-  // Material Symbols 图标示例
-  const materialSymbols = [
-    { name: '10k', class: 'material-symbols-outlined' },
-    { name: 'home', class: 'material-symbols-outlined' },
-    { name: 'search', class: 'material-symbols-outlined' },
-    { name: 'settings', class: 'material-symbols-outlined' },
-    { name: 'favorite', class: 'material-symbols-rounded' },
-    { name: 'star', class: 'material-symbols-rounded' },
-  ]
-
-  // Iconify 图标示例
-  const iconifyIcons = [
-    'mdi:home',
-    'mdi:account',
-    'mdi:heart',
-    'mdi:star',
-    'heroicons:home',
-    'heroicons:user',
-  ]
+  const filteredIcons = allIconNames.filter(name => name.toLowerCase().includes(search.trim().toLowerCase()))
 
   return (
-    <div className="app">
-      <header className="app-header">
-        <h1>
-          <MyIcon name="settings" size={32} style={{ marginRight: '8px' }} />
-          多种图标使用方式演示
-        </h1>
-        <p>支持自定义图标、Material Symbols 和 Iconify 图标</p>
+    <div className="w-full  bg-gradient-to-b from-violet-50 via-white to-violet-100 flex flex-col items-center py-8 px-2 ">
+      <header className="mb-8 text-center w-full">
+        <h1 className="text-3xl font-bold text-violet-900 mb-2 drop-shadow">所有自定义图标一览</h1>
+        <p className="text-gray-500 mb-4">共 {allIconNames.length} 个图标，可直接在项目中使用</p>
+        <input
+          className="w-full max-w-xs px-4 py-2 rounded-lg border border-violet-200 bg-white text-violet-900 focus:outline-none focus:border-violet-400 shadow-sm transition mb-2"
+          type="text"
+          placeholder="搜索图标名..."
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+        />
       </header>
-
-      <main className="app-main">
-        {/* 1. 自定义图标 (使用 @iconify/react) */}
-        <section className="icon-section">
-          <h2>1. 自定义图标 - 使用 @iconify/react</h2>
-          <div className="icon-grid">
-            {customIcons.map((iconName) => (
-              <div 
-                key={iconName} 
-                className={`icon-item ${selectedIcon === iconName ? 'selected' : ''}`}
-                onClick={() => setSelectedIcon(iconName)}
+      <main className="w-full flex flex-col items-center">
+        <section className="w-full">
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-4">
+            {filteredIcons.length === 0 && (
+              <div className="col-span-full text-center text-gray-400 py-12 text-lg">未找到相关图标</div>
+            )}
+            {filteredIcons.map(iconName => (
+              <div
+                key={iconName}
+                className="icon-card relative flex flex-col items-center bg-white/90 rounded-2xl shadow-md border border-violet-100 px-2 py-6 min-h-[200px] transition-transform duration-200 hover:scale-105 hover:shadow-xl hover:border-violet-300"
               >
-                <MyIcon name={iconName} size={32} color='red'/>
-                <span>{iconName}</span>
-                <code>&lt;MyIcon name="{iconName}" /&gt;</code>
+                <button
+                  className="absolute right-3 top-3 z-10 p-1 rounded-full bg-violet-50 hover:bg-violet-200 border border-violet-100 text-violet-500 hover:text-violet-700 transition-colors duration-150 shadow-sm"
+                  title="复制用法"
+                  onClick={() => handleCopy(iconName)}
+                >
+                  {copied === iconName ? (
+                    <span className="i-heroicons-check-20-solid text-green-500 w-5 h-5" />
+                  ) : (
+                    <span className="i-heroicons-clipboard-document-20-solid w-5 h-5" />
+                  )}
+                </button>
+                <div className="icon-card-icon flex items-center justify-center mb-4">
+                  <MyIcon name={iconName as unknown as import('./components/MyIcon').IconName} size={64} />
+                </div>
+                <div className="icon-card-info w-full flex flex-col items-center">
+                  <div className="icon-card-title text-base font-semibold text-violet-700 mb-1 break-all text-center">{iconName}</div>
+                  <div
+                    className="icon-card-code text-xs bg-violet-50 text-violet-600 rounded px-2 py-1 font-mono text-center whitespace-nowrap mt-1 shadow-sm"
+                    ref={el => { codeRefs.current[iconName] = el }}
+                  >{`<MyIcon name="${iconName}" />`}</div>
+                </div>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* 2. Material Symbols - CSS 类名方式 */}
-        <section className="icon-section">
-          <h2>2. Material Symbols - CSS 类名方式</h2>
-          <div className="icon-grid">
-            {materialSymbols.map((icon, index) => (
-              <div key={index} className="icon-item">
-                <span className={`${icon.class}`} style={{ fontSize: '32px' }}>
-                  {icon.name}
-                </span>
-                <span>{icon.name}</span>
-                <code>&lt;span className="{icon.class}"&gt;{icon.name}&lt;/span&gt;</code>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 3. Iconify 图标 - CSS 类名方式 */}
-        <section className="icon-section">
-          <h2>3. Iconify 图标 - CSS 类名方式</h2>
-          <div className="icon-grid">
-            {iconifyIcons.map((iconName, index) => (
-              <div key={index} className="icon-item">
-                <span 
-                  className="iconify" 
-                  data-icon={iconName}
-                  style={{ fontSize: '32px' }}
-                ></span>
-                <span>{iconName.split(':')[1]}</span>
-                <code>&lt;span className="iconify" data-icon="{iconName}"&gt;&lt;/span&gt;</code>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 4. 您想要的格式示例 */}
-        <section className="icon-section">
-          <h2>4. 您想要的格式示例</h2>
-          <div className="examples-grid">
-            <div className="example-item">
-              <h3>Material Symbols 10k 图标</h3>
-              <div className="example-icon">
-                <span className="material-symbols-outlined" style={{ fontSize: '48px' }}>10k</span>
-              </div>
-              <div className="example-code">
-                <code>&lt;span className="material-symbols-outlined"&gt;10k&lt;/span&gt;</code>
-              </div>
-            </div>
-            
-            <div className="example-item">
-              <h3>Iconify MDI Home 图标</h3>
-              <div className="example-icon">
-                <span className="iconify" data-icon="mdi:home" style={{ fontSize: '48px' }}></span>
-              </div>
-              <div className="example-code">
-                <code>&lt;span className="iconify" data-icon="mdi:home"&gt;&lt;/span&gt;</code>
-              </div>
-            </div>
-            
-            <div className="example-item">
-              <h3>自定义图标</h3>
-              <div className="example-icon">
-                <MyIcon name="magic-wand" size={48} />
-              </div>
-              <div className="example-code">
-                <code>&lt;MyIcon name="magic-wand" size={48} /&gt;</code>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 图标预览控制器 */}
-        <section className="icon-preview">
-          <h2>图标大小控制器</h2>
-          <div className="preview-area">
-            <span className="material-symbols-outlined" style={{ fontSize: `${iconSize}px` }}>10k</span>
-            <span className="iconify" data-icon="mdi:heart" style={{ fontSize: `${iconSize}px`, margin: '0 20px' }}></span>
-            <MyIcon name={selectedIcon} size={iconSize} />
-          </div>
-          <div className="size-control">
-            <label>
-              大小: {iconSize}px
-              <input
-                type="range"
-                min="16"
-                max="128"
-                value={iconSize}
-                onChange={(e) => setIconSize(Number(e.target.value))}
-              />
-            </label>
-          </div>
-        </section>
-
-        {/* 使用说明 */}
-        <section className="usage-info">
-          <h2>使用说明</h2>
-          <div className="info-cards">
-            <div className="info-card">
-              <h3>Material Symbols</h3>
-              <p>Google 的官方图标库，支持 outlined 和 rounded 两种样式</p>
-              <pre><code>{`<span className="material-symbols-outlined">
-  icon_name
-</span>`}</code></pre>
-            </div>
-            
-            <div className="info-card">
-              <h3>Iconify 图标</h3>
-              <p>支持超过 100+ 图标库，包括 Material Design Icons、Heroicons 等</p>
-              <pre><code>{`<span 
-  className="iconify" 
-  data-icon="mdi:home"
-></span>`}</code></pre>
-            </div>
-            
-            <div className="info-card">
-              <h3>自定义图标</h3>
-              <p>使用您自己的图标集，通过 addCollection 加载</p>
-              <pre><code>{`<MyIcon 
-  name="add" 
-  size={24} 
-/>`}</code></pre>
-            </div>
           </div>
         </section>
       </main>
