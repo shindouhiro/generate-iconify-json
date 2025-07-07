@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import MyIcon from './components/MyIcon'
 import myIcons from '../../my-icons.json'
 

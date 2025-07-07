@@ -1,6 +1,6 @@
 {
   "prefix": "my-icons",
-  "lastModified": 1751878546,
+  "lastModified": 1751878832,
   "icons": {
     "add": {
       "body": "<g fill=\"none\"><g clip-path=\"url(#clip0_11914_3177)\"><path d=\"M8.00016 14.6663C11.6821 14.6663 14.6668 11.6816 14.6668 7.99967C14.6668 4.31777 11.6821 1.33301 8.00016 1.33301C4.31826 1.33301 1.3335 4.31777 1.3335 7.99967C1.3335 11.6816 4.31826 14.6663 8.00016 14.6663Z\" stroke=\"currentColor\" stroke-linejoin=\"round\"/><path d=\"M8 5.33301V10.6663\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M5.3335 8H10.6668\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><defs><clipPath id=\"clip0_11914_3177\"><rect width=\"16\" height=\"16\" fill=\"currentColor\"/></clipPath></defs></g>"
