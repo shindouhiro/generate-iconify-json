@@ -64,24 +64,45 @@ const nameMapping = {
   '选择框-箭头下': 'select-box-arrow-down',
   '顺序工作流': 'sequential-workflow',
   '首页-已选': 'home-selected',
-  '魔法棒': 'magic-wand'
+  '魔法棒': 'magic-wand',
+  '团队管理': 'team-management',
+  '首页-默认': 'home-default',
+  '全屏模式-插图': 'full-screen-mode-illustration',
+  '发送': 'send',
+  '图片上传': 'image-upload',
+  '文件上传': 'file-upload',
+  'logo-默认': 'logo-default',
+  'logo-收起': 'logo-collapse',
+  '锁': 'lock',
+  '眼睛': 'eye',
+  '踩': 'dislike',
+  '赞': 'like',
+  '用户-默认': 'user-default',
+  '只能工作流': 'smart-workflow',
+  '导航统一头像': 'navigation-unified-avatar',
+  'Slice 58': 'notfound',
+  '工具': 'tool',
+  '关闭': 'close',
+  'MCP广场': 'mcp-square',
+  'MCP服务-默认图标': 'mcp-service',
+  '下-圆_down-c': 'arrow-down-circle',
 }
 
 async function renameIconFiles() {
   try {
     const files = await readdir(ICONS_DIR)
     const svgFiles = files.filter(f => f.endsWith('.svg'))
-    
+
     console.log(`Found ${svgFiles.length} SVG files to process`)
-    
+
     for (const file of svgFiles) {
       const baseName = file.replace('.svg', '')
       const englishName = nameMapping[baseName]
-      
+
       if (englishName) {
         const oldPath = join(ICONS_DIR, file)
         const newPath = join(ICONS_DIR, `${englishName}.svg`)
-        
+
         try {
           await rename(oldPath, newPath)
           console.log(`✓ Renamed: ${file} → ${englishName}.svg`)
@@ -92,7 +113,7 @@ async function renameIconFiles() {
         console.log(`? No mapping found for: ${file}`)
       }
     }
-    
+
     console.log('\nRename operation completed!')
   } catch (error) {
     console.error('Error:', error.message)

@@ -5,12 +5,12 @@ import customIcons from '../../../my-icons.json'
 // 加载自定义图标集
 addCollection(customIcons)
 
-// 定义图标名称类型
-export type IconName = 'add' | 'search' | 'settings' | 'edit' | 'delete' | 'copy' | 'home-selected' | 'user-default' | 'upload' | 'refresh' | 'plus' | 'magic-wand'
+// 定义图标名称类型 - 包含所有在 my-icons.json 中定义的图标
+export type IconName = `${keyof typeof customIcons.icons}`
 
 // 图标组件的属性类型
 interface MyIconProps {
-  name: IconName
+  name: `my-icons:${IconName}` | string
   size?: number
   color?: string
   className?: string
@@ -28,7 +28,7 @@ const MyIcon: React.FC<MyIconProps> = ({
 }) => {
   return (
     <Icon
-      icon={`my-icons:${name}`}
+      icon={`${name}`}
       width={size}
       height={size}
       color={color}

@@ -55,14 +55,14 @@ function App() {
                   )}
                 </button>
                 <div className="icon-card-icon flex items-center justify-center mb-4">
-                  <MyIcon name={iconName as unknown as import('./components/MyIcon').IconName} size={64} />
+                  <MyIcon name={`my-icons:${iconName}`} size={64} />
                 </div>
                 <div className="icon-card-info w-full flex flex-col items-center">
                   <div className="icon-card-title text-base font-semibold text-violet-700 mb-1 break-all text-center">{iconName}</div>
                   <div
                     className="icon-card-code text-xs bg-violet-50 text-violet-600 rounded px-2 py-1 font-mono text-center whitespace-nowrap mt-1 shadow-sm"
                     ref={el => { codeRefs.current[iconName] = el }}
-                  >{`<MyIcon name="${iconName}" />`}</div>
+                  >{`<MyIcon name="my-icons:${iconName}" />`}</div>
                 </div>
               </div>
             ))}
