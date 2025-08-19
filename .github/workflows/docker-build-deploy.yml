@@ -26,12 +26,17 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
+          cache-dependency-path: 'react-use-icons/package-lock.json'
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          cd react-use-icons
+          npm ci
 
       - name: Build application
-        run: npm run build
+        run: |
+          cd react-use-icons
+          npm run build
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -59,8 +64,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: ./Dockerfile
+          context: ./react-use-icons
+          file: ./react-use-icons/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
