@@ -86,6 +86,7 @@ const nameMapping = {
   'MCP广场': 'mcp-square',
   'MCP服务-默认图标': 'mcp-service',
   '下-圆_down-c': 'arrow-down-circle',
+  '工作流': 'workflow',
 }
 
 async function renameIconFiles() {
