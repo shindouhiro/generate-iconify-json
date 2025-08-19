@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import MyIcon from './components/MyIcon'
-import myIcons from '../../my-icons.json'
+import myIcons from '../my-icons.json'
 
 function App() {
   const allIconNames = Object.keys(myIcons.icons)

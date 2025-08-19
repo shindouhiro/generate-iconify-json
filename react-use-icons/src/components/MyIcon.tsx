@@ -1,12 +1,12 @@
 import React from 'react'
 import { Icon, addCollection } from '@iconify/react'
-import customIcons from '../../../my-icons.json'
+import customIcons from '../../my-icons.json'
 
 // 加载自定义图标集
 addCollection(customIcons)
 
 // 定义图标名称类型 - 包含所有在 my-icons.json 中定义的图标
-export type IconName = `${keyof typeof customIcons.icons}`
+export type IconName = keyof typeof customIcons.icons
 
 // 图标组件的属性类型
 interface MyIconProps {
